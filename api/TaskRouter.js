@@ -31,4 +31,20 @@ router.get("/fulltasks", (req,res) => {
         });
 });
 
+
+router.post("/", (req, res) => {
+
+    Project.addTask(req.body)
+            
+            .then((tasks) => {
+                res.json(tasks);
+            })
+
+            .catch((err) => {
+                console.log(err);
+                res.status(500).json({ message: "Sorry Master wayne, Failed to post your new bat project."});
+            });
+});
+
+
 module.exports = router;

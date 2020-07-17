@@ -22,8 +22,8 @@ router.get("/", (req,res) => {
 router.post("/", (req, res) => {
     Project.addResource(req.body)
             
-            .then((resource) => {
-                res.json(resource);
+            .then((resources) => {
+                res.json(resources);
             })
 
             .catch((err) => {
